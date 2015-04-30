@@ -1,0 +1,186 @@
+*** WP Email Template Changelog ***
+
+= 1.3.1 - 2015/04/02 =
+* Fix - Removed '<!--email_container_width-->' on header image. Was causing code to show instead of the image on some email clients
+
+= 1.3.0 - 2015/03/25 =
+* Feature - Added Option to turn the Template ON | OFF. Can now just use the plugin use to set up wp email sender without using the template.
+* Feature - Added Dynamic Template Width - admin can edit the 600px default width of the Template.
+* Feature - Added option to be able to choose what emails template is applied to.
+* Feature - Created new Default Exclude Shortcode. When added to any email the template is not applied to it.
+* Feature - Added a Dynamic Shortcode creator to change the default Exclude Shortcode to a unique one.
+* Fix - Bug that email was not being sent when user did a Password recover when Mandrill API is set as the email sender.
+* Fix - Compatibility text for current version of WordPress on the Core Update page. Feature stopped working with WordPress version 4.1
+
+= 1.2.2 - 2015/03/19 =
+* Tweak - Tested and Tweaked for full compatibility with WooCommerce Version 2.3.7
+* Tweak - Tested and Tweaked for full compatibility with WordPress Version 4.1.1
+
+= 1.2.1 - 2015/02/14 =
+* Tweak - Tested for full compatibility with new WooCommerce Version 2.3.0 which has changes to their email template
+* Tweak - Changed WP_CONTENT_DIR to WP_PLUGIN_DIR. When an admin sets a custom WordPress file structure then it can get the correct path of plugin
+* Fix - Internal container padding not being applied in Outlook 2013 / 2010 / 2007
+* Fix - Social share icon alignment in Safari Browser and iOS Safari.
+* Credit - Thanks to Christopher for bringing the Outlook padding issue to our attention on the a3rev support forum
+
+= 1.2.0 - 2015/02/04 =
+* Feature - Massive upgrade the dynamic Email Template creator - 60+ hours dev work.
+* Feature - Setting broken up on admin panel to clearly define the 4 container structure of the template.
+* Feature - Old [Style] tab is gone replaced by 5 new tabs [Header Image] [Email Title] [Body] [Footer] [Fonts]
+* Feature - [Header Image] added image alignment, border external margin and internal padding, Border style and Border corner settings
+* Feature - [Email Title] added Title alignment, border external margin and internal padding, Border style and Border corner settings
+* Feature - [Content] added content alignment, border external margin and internal padding, Border style and Border corner settings
+* Feature - [Footer] added content font style, border external margin and internal padding, Border style and Border corner settings
+* Feature - Added Outlook Boxed Border ON | OFF setting
+* Feature - Added Fonts tab with help text and Heading Font style settings
+* Feature - Add Email Template style settings applied to WooCommerce Email Templates
+* Tweak - Audit, test and tweak for 100% compatibility with WordPress Version 4.1
+* Tweak - Audit, test and tweak for 100% compatibility with WooCommerce 2.2.10
+* Fix - Show the new plugin version on the Core Update page. Feature stopped working with WordPress version 4.1
+* Fix - Padding on social share icons in Outlook.
+
+= 1.1.6 - 2014/11/13 =
+* Fix - a3rev License code now recognises domain with and without the www. We believe that this will solve Licenses auto deactivating on some sites.
+
+= 1.1.5 - 2014/09/13 =
+* Tweak - Tested 100% compatible with WooCommerce 2.2.2
+* Fix - Changed __DIR__ to dirname( __FILE__ ) for Sass script so that on some server __DIR___ is not defined
+
+= 1.1.4 - 2014/09/05 =
+* Feature - Convert all back end CSS to Sass.
+* Tweak - Updated google font face in plugin framework.
+* Tweak - Tested 100% compatible with WooCommerce Version 2.2
+* Tweak - Tested 100% compatible with WordPress Version 4.0
+
+= 1.1.3.5 - 2014/06/30 =
+* Feature - Mandrill API -Convert email list from BCC field to email TO field to allow multiple recipients because Mandrill API only supports send to a single email address in BCC field. Important! On Mandrill Sending Options uncheck 'Expose the list of recipients when sending to multiple addresses' and BCC recipients cannot see or reply to the other emails in the TO field of the email.
+* Fix - Mandrill API - Auto Convert email CC field to Email TO field so that CC address can receive email. Mandrill API only supports 1 CC email address.
+* Fix - Mandrill API - Detect and remove 2 special characters "<" and ">" used for Email TO field for example detect and convert <name@domain.com> to name@domain.com
+
+= 1.1.3.4 - 2014/06/27 =
+* Tweak - Add filter for the 'From' Email address meta that is set in SMTP or Gmail SMTP sender. This allows 3 party plugins to change the default 'From' Email address to another email, example noreply@domain.com
+
+= 1.1.3.3 - 2014/06/19 =
+* Tweak - Updated chosen js script to latest version 1.0.1 on the a3rev Plugin Framework
+* Tweak - Added support for placeholder feature for input, email , password , text area types
+* Tweak - Convert Lifetime License to single site purchase with add sites at discount feature.
+* Tweak - Checked and updated for full compatibility with WooCommerce version 2.1.11
+
+= 1.1.3.2 - 2014/05/25 =
+* Tweak - Changed add_filter( 'gettext', array( $this, 'change_button_text' ), null, 2 ); to add_filter( 'gettext', array( $this, 'change_button_text' ), null, 3 );
+* Tweak - Update change_button_text() function from ( $original == 'Insert into Post' ) to ( is_admin() && $original === 'Insert into Post' )
+* Tweak - Checked and updated for full compatibility with WordPress version 3.9.1
+* Tweak - Checked and updated for full compatibility with WooCommerce version 2.1.9
+* Tweak - Checked and updated for full compatibility with WP e-Commerce version 3.8.14.1
+* Tweak - Converted the plugin to the new a3rev Free Evaluation Trail License feature.
+* Fix - Code tweaks to fix a3 Plugins Framework conflict with WP e-Commerce tax rates.
+
+= 1.1.3.1 - 2014/02/19 =
+* Fix - Send Test Email applying a duplicate template.
+* Credit - Thanks to Jeremy Summers Tangy Tangerine CA. http://www.tangytangerine.ca/ for alerting us to the issue.
+
+= 1.1.3 - 2014/02/18 =
+* Feature - Added WordPress Email sending settings and configurations.
+* Feature - Added auto config for GoDaddy Hosting when using default via web host as the Email Sending Options
+* Feature - Added activate and configure send mail via SMTP option.
+* Feature - Added activate and auto configure send mail by Gmail option.
+* Feature - Added activate and configure send mail by Mandrill option. Connect via Madrill API Key or SMTP.
+* Feature - Added Send Test Email function.
+* Feature - Added detailed Connection Error DEBUGGING.
+* Tweak - Moved plugin dashboard from the WordPress Settings menu to its own WP Email sidebar menu.
+* Tweak - Added 2 sub menus. Template | Send WP Emails, each with admin settings broken up into tabs.
+* Fix - Template settings Background Pattern cannot turn off bug.
+* Credit - Thanks to Mobarak said for reporting the background pattern bug.
+
+= 1.1.2.1 - 2014/02/12 =
+* Tweak - Added remove_all_filters('mce_external_plugins'); before call to wp_editor to remove extension scripts from other plugins.
+* Tweak - Updated Framework help text font for consistency.
+* Fix - Conflict with wpMandrill plugin. Rewrote template preview URL security require_once( ABSPATH . 'wp-includes/pluggable.php' ); with sanitiser that does not call wp_mail.
+* Credit - Thanks to Jeremy Summers Tangy Tangerine CA. http://www.tangytangerine.ca/ for alerting us about the wpMandrill conflict and access to find and fix.
+
+= 1.1.2 - 2014/01/27 =
+* Tweak - Upgraded for 100% compatibility with soon to be released WooCommerce Version 2.1 with backward compatibility to Version 2.0
+* Tweak - Added all required code so plugin can work with WooCommerce Version 2.1 refactored code.
+* Tweak - Tested for compatibility with WordPress version 3.8.1
+* Tweak - Minor update to some admin panel text.
+* Tweak - Full WP_DEBUG ran, all uncaught exceptions, errors, warnings, notices and php strict standard notices fixed.
+
+= 1.1.1 -2013/12/21 =
+* Feature - a3rev Plugin Framework admin interface upgraded to 100% Compatibility with WordPress v3.8.0 with backward compatibility.
+* Feature - a3rev framework 100% mobile and tablet responsive, portrait and landscape viewing.
+* Feature - Button style - Rounded - Can now set a rounded value for each corner of the button to create many different button styles.
+* Tweak - Upgraded dashboard switches and sliders to Vector based display that shows when WordPress version 3.8.0 is activated.
+* Tweak - Upgraded all plugin .jpg icons and images to Vector based display for full compatibility with new WordPress version.
+* Tweak - Tested 100% compatible with WP 3.8.0
+* Fix - Update make_compatibility function with  isset( $args->slug ) and isset( $args['body']['request'] ) so that our plugin can work together with other developers plugin (eg Backupbuddy) that adds filter on the WordPress plugins_api (bad thing to do)
+* Fix - Upgraded array_textareas type for Padding, Margin settings on the a3rev plugin framework
+* Fix - $args->slug depreciated in WordPress 3.7, replace with $request = unserialize( $args['body']['request'] ); $request->slug
+* Fix - Google fonts preview changes conflict.
+
+= 1.1.0 - 2013/10/10 =
+* Feature - Admin panel intuitive app interface feature. Show slider to set corner radius when select Round, hide when select Square on Border Corner Style Switch.
+* Fix - Intuitive Radio Switch settings not saving. Input with disabled attribute could not parse when form is submitted, replace disabled with custom attribute: checkbox-disabled
+* Fix - App interface Radio switches not working properly on Android platform, replace removeProp() with removeAttr() function script
+
+= 1.0.9 - 2013/10/04 =
+* Feature - Upgraded the plugin to the newly developed a3rev admin panel app interface.
+* Feature - New admin UI features check boxes replaced by switches, some dropdowns replaced by sliders.
+* Feature - Replaced colour picker with new WordPress 3.6.0 colour picker.
+* Feature - Added choice of 350 Google fonts to the existing 17 websafe fonts in all new single row font editor.
+* Feature - New Font Editor has instant preview feature.
+* Feature - Upload Custom Social Media icons feature added.
+* Feature: Added House keeping function. On deletion set if you want the plugin to 'Clean Up After Itself' leaving not trace it was ever installed.
+* Tweak - Admin Panel now has 3 tabs with setting broken up into - General, Style and Social Media.
+* Tweak - Compatibility with WordPress 3.6.0 done when released. Checked again with WP 3.6.1
+* Tweak - Ran full WP_DEBUG All Uncaught exceptions errors and warnings fixed.
+* Fix - Plugins admin script and style not loading in Firefox with SSL on admin. Stripped http// and https// protocols so browser will use the protocol that the page was loaded with.
+
+= 1.0.8 - 2013/06/13 =
+* Tweak - Added PHP Public Static to functions in Class. Done so that Public Static warnings don't show in DE_BUG mode.
+* Tweak - Updated support URL to the plugins a3rev.com support forum.
+
+= 1.0.7 - 2013/04/16 =
+* Feature - Added when install and activate plugin link redirects to License Key validation page instead of the wp-plugins dashboard.
+* Fix - Yahoo Mail does not support p tag - space between paragraphs. Coded in line CSS fix to auto add space between paragraphs for Yahoo Mail.
+* Fix - Yahoo Mail auto removes body tag and hence would not show the background colour. Coded in-line CSS fix to force Yahoo Mail to show background colour.
+* Fix: Updated all JavaScript functions so that the plugin is compatible with jQuery Version1.9 and backwards to version 1.6. WordPress still uses jQuery version 1.8.3. In themes that use Google js Library instead of the WordPress jQuery then there was trouble because Google uses the latest jQuery version 1.9. There are a number of functions in jQuery Version 1.9 that have been depreciated and hence this was causing errors with the jQuery function in the plugin.
+
+= 1.0.6 - 2013/04/01 =
+* Tweak - Upgraded plugins admin to use Chosen script for dropdowns and options.
+* Tweak - Replaced add template header image via URL with image uploader.
+* Tweak - Added option to set Text link colour in email body. Previously this was auto set to be the same as the header background colour - but caused problems with links not visible when header background and email body background both use the same colour.
+* Tweak - Update the plugins wiki docs to show new admin style, image upload feature and colour link text colour options.
+* Fix - Max wide layout issues with template display in iPhone 5.
+* Fix - Bug for users who have https: (SSL) on their sites wp-admin but have http on sites front end. This was causing the email template preview to show a -1 instead of the Template because wp-admin with SSL applied only allows https:, but the url of admin-ajax.php?action=preview_wp_email_template is http: and it is denied hence was returning the ajax -1 error. Fixed by writing a filter to recognize when https is configured on wp-admin and parsing correctly. If you do not have this configuration nothing changes for you, if you do have https on your wp-admin (or install it in the future) and http on the front end then Email Template Preview action now automatically detects that and works as it should.
+
+= 1.0.5 - 2013/03/05 =
+* Feature - Added the ability to deactivate the Email Template background pattern. (much requested feature).
+* Tweak - Updated all plugin code to be 100% compatible with WooCommerce V2.0 and backwards.
+
+= 1.0.4.1 - 2013/02/16 =
+* Tweak - Added a Settings link to the plugins wp-admin plugins dashboard listing and updated the Support URL
+* Fix - Remove define tinymce plugins for the Email footer text editor. This allows the Email footer text editor to use use all current plugins of tinymce in use on the site the plugin is installed on.
+* Localization - German Translation by Marko Geisler added to langauge folder
+
+= 1.0.4 - 2013/01/11 =
+* Fix - Email Template options on admin panel not updating when click save changes. Stopped working in version 1.0.3 - now fixed.
+* Fix - WP Email Template apply to WooCommerce Email template when user had selected do not apply for that option.
+* Credit - Thank you to [Roger Amstell](http://rapsystems.co.uk) for reporting and helping us to locate and fix these bugs.
+
+
+= 1.0.3 - 2013/01/09 =
+* Fix - When user server does not support  file_get_contents function changes made to the template were not applying to the WooCommerce Email template. We had added a get file from get_stylesheet_directory_uri constant as a work around but had missed the () at the end of the function so it wasn't working
+
+= 1.0.2 - 2012/12/31 =
+* Feature - Updated plugin API to allow Pro Version License holders to manage their Licenses from the all new "My Account" dashboard on a3rev. Includes the option to see which domains each plugin is installed and activated on and the ability to deactivate the plugin on any domain from the 'My Account' > Manage Licenses dashboard.
+
+
+= 1.0.1 - 2012/11/29 =
+* Feature - Now supports WPMU - Pro Version Single License now works on any domain or sub domain that the Plugin is installed on with the WPMU environment. Note it only works on 1 per license.
+* Tweak - Change Pro Version plugin API call from cURL to now use WordPress auto update wp_remote_request function. This is to fix Pro License user who do not have cURL activated on their host not being able to install and activate the plugin.
+* Tweak - Built new Amazon EC2 plugin API to increase connection and download speed as well as reliability and uptime - plugin from this version calls to the new API.
+* Fix - Fixed conflict with WordPress Domain Mapping plugin - thanks to Johannes for access to his WPMU install to find and fix this issue.
+* Fix - Change Pro Version plugin API call so that it only calls from the WP-Plugins page and not from every admin page.* Fixed: Changed Pro Version plugin API call so that if it calls once to the API and it does not connect it auto aborts instead of keeping on trying to call.
+
+= 1.0.0 - 2012/09/03 =
+* First Release.
